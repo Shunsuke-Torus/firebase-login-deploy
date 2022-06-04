@@ -6,7 +6,6 @@
 .pnp.js
 /public
 .env
-
 #package
 /package-lock.json
 

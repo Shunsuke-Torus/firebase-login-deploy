@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from "react";
-import {onAuthStateChanged } from "firebase/auth";
+import {Auth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 export interface IAuthRouteProps{
@@ -19,9 +19,8 @@ const AuthRoute:React.FunctionComponent<IAuthRouteProps> = (props) =>{
             setLoading(false);
             navigate('/');
         }else {
-            console.log("unauthorized");
             navigate('/login');
-            return () => AuthCheck();
+            window.location.reload();
         }
     })
 
